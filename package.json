@@ -4,7 +4,7 @@
   "description": "Tamagotchi Project",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel ./public/index.html"
   },
   "repository": {
     "type": "git",
