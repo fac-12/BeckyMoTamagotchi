@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getUserData } from "../../utils/data_helpers";
+import { Card } from "../card";
 
 export default class SearchBar extends Component {
   state = {
