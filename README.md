@@ -1,0 +1,2 @@
+# BeckyMoTamagotchi
+Tamagotchi Project
