@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# cache files
+.cache
+
+# api key
+token.js
