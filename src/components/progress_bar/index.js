@@ -8,10 +8,19 @@ export default class ProgressBar extends React.Component {
 
   countDown = () => {
     this.setState((prevState, props) => {
+      if (prevState.count === 0) {
+        return { count: prevState.count };
+      }
       return { count: prevState.count - 1 };
     });
   };
-  componentDidMount = () => setInterval(this.countDown, 100);
+  componentDidMount = () => setInterval(this.countDown, 10);
+
+  feed = () => {
+    this.setState((prevState, props) => {
+      return { count: prevState.count + 100 };
+    });
+  };
 
   render() {
     const ProgressBarStyle = {
@@ -21,6 +30,7 @@ export default class ProgressBar extends React.Component {
     return (
       <div style={ProgressBarStyle}>
         <p>{this.state.count.toFixed()}</p>
+        <button onClick={this.feed}>Feed</button>
       </div>
     );
   }
