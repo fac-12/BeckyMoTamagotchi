@@ -1,15 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import ProgressBar from "../progress_bar";
 import "./style.css";
 
-export default class Card extends React.Component {
-  render() {
-    return (
-      <div>
-        <span>{this.props.login}</span>
-        <img src={this.props.avatar_url} />
-        <ProgressBar />
-      </div>
-    );
-  }
-}
+export const Card = ({ login, avatar_url }) => {
+  return (
+    <div>
+      <span>{login}</span>
+      <img src={avatar_url} />
+      {avatar_url ? <ProgressBar /> : null}
+    </div>
+  );
+};

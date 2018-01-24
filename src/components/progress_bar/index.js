@@ -6,17 +6,21 @@ export default class ProgressBar extends React.Component {
     count: 500
   };
 
-  count = () => {
+  countDown = () => {
     this.setState((prevState, props) => {
       return { count: prevState.count - 1 };
     });
   };
-  componentDidMount = () => setInterval(this.count, 100);
+  componentDidMount = () => setInterval(this.countDown, 100);
 
   render() {
+    const ProgressBarStyle = {
+      width: this.state.count + "px",
+      backgroundColor: "blue"
+    };
     return (
-      <div className="progressbar">
-        <p>{this.count.toFixed()}</p>
+      <div style={ProgressBarStyle}>
+        <p>{this.state.count.toFixed()}</p>
       </div>
     );
   }
