@@ -22,6 +22,8 @@ export default class ProgressBar extends React.Component {
     });
   };
 
+  delete = () => {};
+
   render() {
     const ProgressBarStyle = {
       width: this.state.count + "px",
@@ -30,7 +32,12 @@ export default class ProgressBar extends React.Component {
     return (
       <div style={ProgressBarStyle}>
         <p>{this.state.count.toFixed()}</p>
-        <button onClick={this.feed}>Feed</button>
+        <button onClick={this.feed} className="feedbutton">
+          Feed
+        </button>
+        <button onClick={this.delete} className="feedbutton">
+          Delete
+        </button>
       </div>
     );
   }
