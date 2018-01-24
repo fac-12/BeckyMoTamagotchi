@@ -6,9 +6,9 @@ export const Card = props => {
   console.log(props, "props");
   return Object.entries(props).map(user => {
     return (
-      <li key={user[1].id}>
+      <li key={user[1].id} className="listitem">
         <span>{user[1].login}</span>
-        <img src={user[1].avatar_url} />
+        <img src={user[1].avatar_url} className="tamagotchi" />
         {user[1].avatar_url ? <ProgressBar /> : null}
       </li>
     );

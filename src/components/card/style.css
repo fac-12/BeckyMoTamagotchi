@@ -1,4 +1,19 @@
 .progressbar {
   height: 100px;
   weight: 100px;
+  font-family: "Raleway";
+}
+
+.tamagotchi {
+  border-radius: 50%;
+  border: 10px solid black;
+  width: 25vw;
+  font-family: "Raleway";
+}
+
+.listitem {
+  width: 30vw;
+  list-style: none;
+  font-family: "Raleway";
+  font-size: 37px;
 }

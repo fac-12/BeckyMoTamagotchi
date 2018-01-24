@@ -3,7 +3,7 @@ import "./style.css";
 
 export default class ProgressBar extends React.Component {
   state = {
-    count: 500
+    count: 400
   };
 
   countDown = () => {
@@ -14,18 +14,18 @@ export default class ProgressBar extends React.Component {
       return { count: prevState.count - 1 };
     });
   };
-  componentDidMount = () => setInterval(this.countDown, 10);
+  componentDidMount = () => setInterval(this.countDown, 100);
 
   feed = () => {
     this.setState((prevState, props) => {
-      return { count: prevState.count + 100 };
+      return { count: prevState.count + 50 };
     });
   };
 
   render() {
     const ProgressBarStyle = {
       width: this.state.count + "px",
-      backgroundColor: "blue"
+      backgroundColor: "#909090"
     };
     return (
       <div style={ProgressBarStyle}>

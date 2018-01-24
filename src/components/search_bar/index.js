@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getUserData } from "../../utils/data_helpers";
 import { Card } from "../card";
+import "./style.css";
 
 export default class SearchBar extends Component {
   state = {
@@ -33,6 +34,9 @@ export default class SearchBar extends Component {
     const { avatar_url } = this.state.data;
     return (
       <div>
+        <ul className="list">
+          {this.state.data.length > 0 ? <Card {...this.state.data} /> : null}
+        </ul>
         <form id="searchForm" onSubmit={this.onSubmit}>
           <input
             type="text"
@@ -41,9 +45,6 @@ export default class SearchBar extends Component {
           />
           <button type="submit">Search</button>
         </form>
-        <ul>
-          {this.state.data.length > 0 ? <Card {...this.state.data} /> : null}
-        </ul>
       </div>
     );
   }
