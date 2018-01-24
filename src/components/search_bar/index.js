@@ -26,11 +26,28 @@ export default class SearchBar extends Component {
             data: [...prevState.data.concat(userDataNew)]
           };
         });
+        // const jsonState = JSON.stringify(this.state);
+        // localStorage.setItem("state", jsonState);
       })
       .catch(err => console.log(err));
   };
 
   render() {
+    // const savedState = localStorage.getItem("state");
+    // console.log(savedState);
+    //
+    // if (savedState) {
+    //   const saveState = JSON.parse(savedState);
+    //   const saveStateNew = [];
+    //   saveStateNew.push(saveState);
+    //   console.log(saveStateNew, "ssn");
+    //
+    //   this.setState = (prevState, props) => {
+    //     return {
+    //       data: [...prevState.data.concat(saveStateNew)]
+    //     };
+    //   };
+    // }
     const { avatar_url } = this.state.data;
     return (
       <div>
