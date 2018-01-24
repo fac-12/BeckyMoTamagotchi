@@ -18,6 +18,9 @@ export default class ProgressBar extends React.Component {
 
   feed = () => {
     this.setState((prevState, props) => {
+      if (prevState.count > 450) {
+        return { count: 500 };
+      }
       return { count: prevState.count + 50 };
     });
   };
