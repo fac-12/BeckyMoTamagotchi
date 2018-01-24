@@ -3,24 +3,44 @@ import "./style.css";
 
 export default class ProgressBar extends React.Component {
   state = {
-    count: 500
+    count: 400
   };
 
   countDown = () => {
     this.setState((prevState, props) => {
+      if (prevState.count === 0) {
+        return { count: prevState.count };
+      }
       return { count: prevState.count - 1 };
     });
   };
   componentDidMount = () => setInterval(this.countDown, 100);
 
+  feed = () => {
+    this.setState((prevState, props) => {
+      if (prevState.count > 450) {
+        return { count: 500 };
+      }
+      return { count: prevState.count + 50 };
+    });
+  };
+
+  delete = () => {};
+
   render() {
     const ProgressBarStyle = {
       width: this.state.count + "px",
-      backgroundColor: "blue"
+      backgroundColor: "#909090"
     };
     return (
       <div style={ProgressBarStyle}>
         <p>{this.state.count.toFixed()}</p>
+        <button onClick={this.feed} className="feedbutton">
+          Feed
+        </button>
+        <button onClick={this.delete} className="feedbutton">
+          Delete
+        </button>
       </div>
     );
   }

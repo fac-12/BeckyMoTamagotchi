@@ -1,3 +1,7 @@
+.feedbutton {
+  border-radius: 50%;
+  font-family: "Raleway";
+}
 .progressbar {
   height: 100px;
   weight: 100px;
@@ -16,4 +20,10 @@
   list-style: none;
   font-family: "Raleway";
   font-size: 37px;
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: "Raleway";
 }

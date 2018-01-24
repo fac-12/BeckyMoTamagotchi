@@ -1,5 +1,4 @@
-.progressbar {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+.feedbutton {
+  border-radius: 50%;
+  font-family: "Raleway";
 }
