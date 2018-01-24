@@ -4,7 +4,7 @@ import { Card } from "../card";
 
 export default class SearchBar extends Component {
   state = {
-    data: {},
+    data: [],
     value: null
   };
 
@@ -16,7 +16,16 @@ export default class SearchBar extends Component {
   onSubmit = event => {
     event.preventDefault();
     getUserData(this.state.value)
-      .then(data => this.setState({ data }))
+      .then(userData => {
+        const userDataNew = [];
+        userDataNew.push(userData);
+        this.setState((prevState, props) => {
+          console.log(userData, "userData");
+          return {
+            data: [...prevState.data.concat(userDataNew)]
+          };
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -32,7 +41,9 @@ export default class SearchBar extends Component {
           />
           <button type="submit">Search</button>
         </form>
-        <Card {...this.state.data} />
+        <ul>
+          {this.state.data.length > 0 ? <Card {...this.state.data} /> : null}
+        </ul>
       </div>
     );
   }
